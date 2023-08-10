@@ -1,3 +1,4 @@
+// import { useEffect, useState } from "react";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
@@ -17,10 +18,41 @@ const DUMMY_MEETUPS = [
     },
 ];
 
-const HomePage = () => {
+const HomePage = (props) => {
+    // const [loadedMeetups, setLoadedMeetup] = useState([]);
+
+    // useEffect(() => {
+    //     // send a http request and fetch data
+    //     setLoadedMeetup(DUMMY_MEETUPS)
+    // }, []); 
+
     return (
-        <MeetupList meetups={DUMMY_MEETUPS}/>
+        // <MeetupList meetups={loadedMeetups}/>
+        <MeetupList meetups={props.meetups}/>
    );
+};
+
+// export async function getServerSideProps(context) {
+//     const request = context.request;
+//     const response = context.response;
+    
+//     // fetch data from an API
+
+//     return {
+//         props: {
+//             meetups: DUMMY_MEETUPS,
+//         },
+//     };
+// };
+
+export async function getStaticProps() {
+    // fetch data from an API
+    return {
+        props: {
+            meetups: DUMMY_MEETUPS,
+        },
+        revalidate: 1 // number of seconds nextjs will will wait until it regenerate this page for an incoming request
+    };  
 };
 
 export default HomePage;

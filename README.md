@@ -1,3 +1,6 @@
+# React - The Complete Guide 2023 (incl. React Router & Redux)
+# Section 24: A (Pretty Deep Dive) Introduction to Next.js
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
