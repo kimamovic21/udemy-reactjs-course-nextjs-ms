@@ -113,4 +113,28 @@ Udemy ReactJS Course MS - NextJS
 -kreiramo varijablu const data
 -importujemo React hook useRouter
 -kreiramo varijablu const router
--
+
+
+395. Getting Data From the Database
+-u pages folderu, u glavnom index.js fajl importujemo MongoClient
+-u funkciju getStaticProps() dodajemo MongoClient.connect()
+-u funkciji getStaticProps() kreiramo varijable
+-u return izjave, unutar props objekta, meetups varijabli dodajemo metodu map()
+
+
+396. Getting Meetup Details Data & Preparing Pages
+-u [meetupId]/index.js fajl importujemo MongoClient
+-u funkciji getStaticPaths() kreiramo varijable
+-u funkciji getStaticProps() kreiramo varijable
+-u return izjavi, u objekt props dodajemo meetupData: selectedMeetup
+-funkciji MeetupDetails() dodajemo parametar props
+-komponenti MeetupDetail dodajemo props vrijednosti
+-importujemo ObjectId
+-u metodi findOne(), unutar objekta, id-u dodajemo new ObjectId
+
+
+397. Adding "head" Metadata
+-u pages folderu, unutar index.js fajla importujemo komponentu Head
+-u new-meetup folderu, unutar index.js fajla importujemo komponentu Head
+-u [meetupId]/index.js fajl importujemo komponentu Head
+
