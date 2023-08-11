@@ -31,29 +31,17 @@ export async function getStaticPaths() {
     client.close();
 
     return {
-        fallback: false,
+        fallback: 'blocking',
         paths: meetups.map(meetup => ({
             params: {
                 meetupId: meetup._id.toString()
             }
         }))
-        
-        // [
-        //     { 
-        //         params: {
-        //             meetupId: 'm1',
-        //        },
-        //     },
-        //     {
-        //         params: {
-        //             meetupId: 'm2',
-        //         },
-        //     },
-        // ],
     };
 };
 
 export async function getStaticProps(context) {
+    console.log(context);
     // fetch data for a single meetup
 
     const meetupId = context.params.meetupId;
@@ -67,18 +55,12 @@ export async function getStaticProps(context) {
     const selectedMeetup = await meetupsCollection.findOne({
         _id: new ObjectId(meetupId),
     });
+    console.log(selectedMeetup);
 
     client.close();
 
     return {
         props: {
-            // meetupData: {
-            //     image: 'https://meetbosnia.com/storage/2022/04/What-to-see-in-Sarajevo.jpg',
-            //     id: meetupId,
-            //     title: 'First Meetup',
-            //     address: '71000 Sarajevo',
-            //     description: 'This is a first Meetup',
-            // },
             meetupData: {
                 id: selectedMeetup._id.toString(),
                 title: selectedMeetup.title,

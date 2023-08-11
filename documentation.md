@@ -138,3 +138,17 @@ Udemy ReactJS Course MS - NextJS
 -u new-meetup folderu, unutar index.js fajla importujemo komponentu Head
 -u [meetupId]/index.js fajl importujemo komponentu Head
 
+
+
+398. Deploying Next.js Projects
+-postavljanje stranice na web preko Vercel-a
+
+
+399. Using Fallback Pages & Re-deploying
+-u [meetupId]/index.js fajl dodajemo fallback: 'blocking'
+
+
+400. Summary
+
+
+401. Module Resources

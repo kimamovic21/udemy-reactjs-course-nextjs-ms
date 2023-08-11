@@ -3,6 +3,8 @@ import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
 const NewMeetupForm = (props) => {
+    // console.log(props);
+
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const addressInputRef = useRef();
